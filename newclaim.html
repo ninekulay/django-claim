@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Claim-Report</title>
+</head>
+  <body>
+	<div>
+	  <form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		<h1>Create Report</h1>
+		<div>
+			<label> Dealer code :</label> <span> {{ user }} </span>
+		</div>
+
+		<h3>Detail</h3>
+	<div>
+		<div>
+			<label>Select Brand : </label>
+				<select name="BrandType" id="BrandType" size="1">
+				<option value="" selected="selected" >Select Brand : </option>
+				</select>
+			
+		</div>	
+
+		<div>
+			<label>Select Model : </label>
+				<select name="ModelType" id="ModelType" size="1" >
+				<option value="" selected="selected">Select Model : </option>
+				</select>
+			
+		  </div>
+		<div>
+			<label>Select Type : </label>
+				<select name="SlType" id="SlType" size="1" >
+				<option value="" selected="selected">Select Type : </option>
+				</select>
+		</div>
+		<div>
+			<label>Date of purchase : </label>	  
+			<input type="date" id="Deliverydate" name="Deliverydate"> 
+		</div>
+		<div>				
+			<label>Serial No หมายเลขผลิตภัณฑ์ :</label>
+			<input type="TEXT" name="MdSerial" id="MdSerial" size="21">
+		</div>
+		<div>
+		<label>Detailed information of damage :</label> <br>
+		<textarea name="DetailDamage"  rows="5"></textarea>
+		</div>
+	</div>
+	<div>
+		<h3 >Please attached picture</h3> 
+	    <input type="file" id="Photouser1" name="Photouser1" >
+	</div>
+<div>
+ <button type="submit" class="btn-block" onsubmit="return confirm('You want to create report?');">SAVE</button> 
+</div>
+</form>
+</div>
+</body>
+</html>

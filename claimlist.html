@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <table class="table">
+	<thead> 
+	  <tr>
+		<th>claimid</th>
+		<th>Brand</th>
+		<th>Model</th>
+		<th>Type</th>
+		<th>Date of purchase</th>
+	  </tr>
+	</thead>
+	<tbody>
+	{% for claim in claimlist %}
+		  <tr>
+			<td>{{claim.Claimid}}</td>
+			<td>{{claim.BrandType}}</td>
+			<td>{{claim.ModelType}}</td>
+			<td>{{claim.SlType}}</td>
+			<td>{{claim.Deliverydate|date:"d M Y" }}</td>
+		  </tr>	
+	{% endfor %}
+	</tbody>
+  </table>
+</body>
+</html>
+
